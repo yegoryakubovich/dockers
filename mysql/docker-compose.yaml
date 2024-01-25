@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    restart: on-failure
+    image: mysql:8.3
+    volumes:
+      - ./app:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - mysql_network
+
+volumes:
+  mysql_volume:
+
+networks:
+  mysql_network:
