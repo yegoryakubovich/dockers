@@ -9,7 +9,7 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "${PORT}:3306"
     networks:
       - mysql_network
     env_file:
